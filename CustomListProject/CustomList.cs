@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace CustomListProject
 {
-    class CustomList<T>
+    public class CustomList<T>
     {
         //member variables
-        private T[] myCustomList;
+        private T[] myCustomArray;
         private int count;
         private int capacity;
         public int Count
@@ -39,11 +39,11 @@ namespace CustomListProject
         {
             get
             {
-                return myCustomList[i];
+                return myCustomArray[i];
             }
             set
             {
-                myCustomList[i] = value;
+                myCustomArray[i] = value;
             }
         }
 
@@ -51,15 +51,33 @@ namespace CustomListProject
         // constructor
         public CustomList()
         {
+            count = 0;
             capacity = 4;
-            customList = new T[capacity];
-            count = ;
-            
-
+            myCustomArray = new T[capacity];
         }
 
 
         // member methods
+        public void Add(T numberAdded )
+        {
+            if (capacity == count)
+            {
+                T[]temporaryArray = new T[capacity];
+                temporaryArray = myCustomArray;
+                myCustomArray = new T[capacity *= 2];
+                for (int i = 0; i < temporaryArray.Length; i++)
+                {
+                    myCustomArray[i] = temporaryArray[i];
+                }
+                
+                
+                
+
+            }
+            //what should the array look like after we exit that if statement?
+            myCustomArray[Count] = numberAdded;
+            Count++;
+        }
 
     }
 }
