@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace CustomListTests
 {
     [TestClass]
-    public class add
+    public class AddTests
     {
         [TestMethod]
         public void Add_AddFourNumbers_IntAddedCountFour()
