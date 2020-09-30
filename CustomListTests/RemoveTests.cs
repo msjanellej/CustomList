@@ -102,5 +102,25 @@ namespace CustomListTests
             //assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Remove_RemoveItemOnlyOnceWhenThereAreMultiple_OnlyRemoveFirst()
+        {
+            //arrange
+            CustomList<int> myArray = new CustomList<int>();
+            int number = 2;
+            int secondNumber = 1;
+            int thirdNumber = 2;
+            int expected = 2;
+            int actual;
+            //act
+            myArray.Add(number);
+            myArray.Add(secondNumber);
+            myArray.Add(thirdNumber);
+            myArray.Remove(secondNumber);
+         
+            actual = myArray[1];
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

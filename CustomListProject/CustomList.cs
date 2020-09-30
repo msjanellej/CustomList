@@ -58,21 +58,17 @@ namespace CustomListProject
 
 
         // member methods
-        public void Add(T numberAdded )
+        public void Add(T numberAdded)
         {
             if (capacity == count)
             {
-                T[]temporaryArray = new T[capacity];
+                T[] temporaryArray = new T[capacity];
                 temporaryArray = myCustomArray;
                 myCustomArray = new T[capacity *= 2];
                 for (int i = 0; i < temporaryArray.Length; i++)
                 {
                     myCustomArray[i] = temporaryArray[i];
                 }
-                
-                
-                
-
             }
             myCustomArray[Count] = numberAdded;
             Count++;
@@ -80,15 +76,42 @@ namespace CustomListProject
         public bool Remove(T itemToRemove)
         {
             T[] temporaryArray = new T[capacity];
-            if (!itemToRemove)
+            bool itemFound = false;
+            for (int i = 0; i < myCustomArray.Length; i++)
             {
-                for (int i=0; i < myCustomArray.Length; i++)
-                {
-                    temporaryArray.Add(myCustomArray[i]);
-                }
-            }
 
-            count--;
+                if (!myCustomArray[i].Equals(itemToRemove) && itemFound == false)
+                {
+                    if (itemFound == false)
+                    {
+                        temporaryArray[i] = myCustomArray[i];
+
+                    }
+
+                }
+               
+                else if (myCustomArray[i].Equals(itemToRemove) && itemFound == false)
+                {
+
+                    itemFound = true;
+                    //temporaryArray[i] = myCustomArray[i + 1];
+                    continue;
+                }
+                else
+                {
+                    temporaryArray[i - 1] = myCustomArray[i];
+                }
+                //need to account for the end of the array in  a condition
+                //need to populate new array whenever the item to remove is found
+                //[1, 2, 3]
+
+            }
+            myCustomArray = temporaryArray;
+            
+            if (itemFound)
+            {
+                count--;
+            }
             return true;
         }
 
