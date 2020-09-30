@@ -52,6 +52,7 @@
     <Compile Include="AddTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveTests.cs" />
+    <Compile Include="String.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

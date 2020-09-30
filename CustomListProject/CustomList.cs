@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomListProject
 {
-    public class CustomList<T>
+    public class CustomList<T> : Object
     {
         //member variables
         private T[] myCustomArray;
@@ -79,7 +79,6 @@ namespace CustomListProject
             bool itemFound = false;
             for (int i = 0; i < myCustomArray.Length; i++)
             {
-
                 if (!myCustomArray[i].Equals(itemToRemove) && itemFound == false)
                 {
                     if (itemFound == false)
@@ -87,12 +86,9 @@ namespace CustomListProject
                         temporaryArray[i] = myCustomArray[i];
 
                     }
-
-                }
-               
+                } 
                 else if (myCustomArray[i].Equals(itemToRemove) && itemFound == false)
                 {
-
                     itemFound = true;
                     //temporaryArray[i] = myCustomArray[i + 1];
                     continue;
@@ -101,18 +97,21 @@ namespace CustomListProject
                 {
                     temporaryArray[i - 1] = myCustomArray[i];
                 }
-                //need to account for the end of the array in  a condition
-                //need to populate new array whenever the item to remove is found
-                //[1, 2, 3]
-
             }
             myCustomArray = temporaryArray;
-            
             if (itemFound)
             {
                 count--;
             }
             return true;
+        }
+        public override string ToString()
+        {
+            for (int i=0; i<count; i++)
+            {
+
+            }
+            return null;
         }
 
     }
