@@ -74,9 +74,22 @@ namespace CustomListProject
                 
 
             }
-            //what should the array look like after we exit that if statement?
             myCustomArray[Count] = numberAdded;
             Count++;
+        }
+        public bool Remove(T itemToRemove)
+        {
+            T[] temporaryArray = new T[capacity];
+            if (!itemToRemove)
+            {
+                for (int i=0; i < myCustomArray.Length; i++)
+                {
+                    temporaryArray.Add(myCustomArray[i]);
+                }
+            }
+
+            count--;
+            return true;
         }
 
     }
