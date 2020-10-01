@@ -114,6 +114,12 @@ namespace CustomListProject
             }
             return outputString;
         }
+        public static CustomList<T> operator+ (CustomList<T> firstArray, CustomList<T>  secondArray)
+        {
+            CustomList<T> temporaryArray = new CustomList<T>();
+            temporaryArray = firstArray + secondArray;
+            return temporaryArray;
+        }
 
 
     }
