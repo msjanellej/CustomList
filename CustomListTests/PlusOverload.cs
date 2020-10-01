@@ -19,7 +19,7 @@ namespace CustomListTests
             int fourthNumber = 3;
             int fifthNumber = 4;
             int sixthNumber = 5;
-            int expected = 012345;
+            string expected = "012345";
             CustomList<int> actualList = new CustomList<int>();
             string actual;
             //act
@@ -47,7 +47,7 @@ namespace CustomListTests
             string fourthWord = "The";
             string fifthWord = "Best";
             string sixthWord = "Anime";
-            string expected = "OnePeiceIsTheBestAnime";
+            string expected = "OnePieceIsTheBestAnime";
             string actual;
             CustomList<string> actualList = new CustomList<string>();
             //act
@@ -73,7 +73,7 @@ namespace CustomListTests
             string secondWord = "Piece";
             string thirdWord = "Is";
             string fourthWord = "Best";
-            string expected = "OnePeiceIsBest";
+            string expected = "OnePieceIsBest";
             CustomList<string> actualList = new CustomList<string>();
             string actual;
             //act
@@ -94,7 +94,7 @@ namespace CustomListTests
             //arrange
             CustomList<string> testArrayOne = new CustomList<string>();
             CustomList<string> testArrayTwo = new CustomList<string>();
-            string expected = "";
+            string expected = null;
             CustomList<string> actualList = new CustomList<string>();
             string actual;
             //act

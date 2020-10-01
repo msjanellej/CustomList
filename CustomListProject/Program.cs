@@ -12,20 +12,7 @@ namespace CustomListProject
     {
         static void Main(string[] args)
         {
-            // make two customlist objects
-            // make a third list, that is equal to list1 + list2;
-            CustomList<string> customArrayOne = new CustomList<string>();
-            customArrayOne.Add("cats");
-            customArrayOne.Add("are");
-            customArrayOne.Add("the");
-            CustomList<string> CustomArrayTwo = new CustomList<string>();
-            CustomArrayTwo.Add("best");
-            CustomArrayTwo.Add("pets");
-            CustomList<string> resultArray = new CustomList<string>();
-            resultArray = customArrayOne + CustomArrayTwo;
-            string result = resultArray.ToString();
-            Console.WriteLine(result);
-            Console.ReadLine();
+            
 
         }
     }

@@ -49,7 +49,6 @@ namespace CustomListProject
             }
         }
 
-
         // constructor
         public CustomList()
         {
@@ -57,7 +56,6 @@ namespace CustomListProject
             capacity = 4;
             myCustomArray = new T[capacity];
         }
-
 
         // member methods
         public void Add(T numberAdded)
@@ -132,7 +130,5 @@ namespace CustomListProject
             }  
             return temporaryArray;
         }
-
-
     }
 }
