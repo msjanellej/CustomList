@@ -107,14 +107,14 @@ namespace CustomListProject
         }
         public override string ToString()
         {
-            string strng = " ";
-            foreach (T value in myCustomArray)
+            string outputString = null;
+            for (int i =0; i<count; i++)
             {
-                strng += value + strng;
-               
+                outputString = outputString + myCustomArray[i];
             }
-            return strng;
+            return outputString;
         }
+
 
     }
 }

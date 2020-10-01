@@ -15,7 +15,7 @@ namespace CustomListTests
             int firstNumber = 1;
             int secondNumber = 2;
             int thirdNumber = 3;
-            string expected = "1 2 3";
+            string expected = "123";
             string actual;
             //act
             testArray.Add(firstNumber);
@@ -34,7 +34,7 @@ namespace CustomListTests
             string secondWord = "Name";
             string thirdWord = "Is";
             string fourthWord = "Janelle";
-            string expected = "My Name Is Janelle";
+            string expected = "MyNameIsJanelle";
             string actual;
             //act
             testArray.Add(firstWord);
@@ -44,6 +44,25 @@ namespace CustomListTests
             actual = testArray.ToString();
             //assert
             Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ToString_AddThreeItemsToString_DoesNotPrintEmptyIndex()
+        {
+            string firstWord = "Cats";
+            string secondWord = "Are";
+            string thirdWord = "Cool";
+            string expected = "CatsAreCool";
+            string actual;   
+            CustomList<string> testArray = new CustomList<string>();
+            //act
+            testArray.Add(firstWord);
+            testArray.Add(secondWord);
+            testArray.Add(thirdWord);
+            actual = testArray.ToString();
+            //assert
+            Assert.AreEqual(expected, actual);
+
+
         }
 
 
