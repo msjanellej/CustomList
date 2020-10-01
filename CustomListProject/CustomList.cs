@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CustomListProject
@@ -117,7 +119,17 @@ namespace CustomListProject
         public static CustomList<T> operator+ (CustomList<T> firstArray, CustomList<T>  secondArray)
         {
             CustomList<T> temporaryArray = new CustomList<T>();
-            temporaryArray = firstArray + secondArray;
+
+            //temporaryArray.Add(0);
+            for (int i = 0; i < firstArray.count; i++)
+            {
+                temporaryArray.Add(firstArray[i]);
+
+            }
+            for (int i = 0; i < secondArray.count; i++)
+            {
+                temporaryArray.Add(secondArray[i]);
+            }  
             return temporaryArray;
         }
 
