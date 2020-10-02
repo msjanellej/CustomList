@@ -8,13 +8,13 @@ namespace CustomListTests
     public class MinusOverload
     {
         [TestMethod]
-        public void MinusOverload_INTSubtractZeroIndex_ZeroIndexRemovedfromBothLists()
+        public void MinusOverload_INTSubtractZeroIndex_ZeroIndexRemoved()
         {
             //assign
             CustomList<int> testArrayOne = new CustomList<int>();
             CustomList<int> testArrayTwo = new CustomList<int>();
             CustomList<int> resultList = new CustomList<int>();
-            string expected = "35";
+            string expected = "3";
             string actual;
             //act
             testArrayOne.Add(1);
@@ -27,13 +27,13 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void MinusOverload_subtractingTwoItemsFromList_BothMatchingIndexesRemoved()
+        public void MinusOverload_subtractingTwoItemsFromList_MatchingIndexRemovedFromFirstList()
         {
             //assign
             CustomList<int> testArrayOne = new CustomList<int>();
             CustomList<int> testArrayTwo = new CustomList<int>();
             CustomList<int> resultList = new CustomList<int>();
-            string expected = "37";
+            string expected = "3";
             string actual;
             //act
             testArrayOne.Add(1);
@@ -48,13 +48,13 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void MinusOverload_SubtractNotAtSameIndex_MatchingItemsRemovedFromLists()
+        public void MinusOverload_SubtractNotAtSameIndex_MatchingItemsRemovedFromFirstList()
         {
             //assign
             CustomList<int> testArrayOne = new CustomList<int>();
             CustomList<int> testArrayTwo = new CustomList<int>();
             CustomList<int> resultList = new CustomList<int>();
-            string expected = "35";
+            string expected = "3";
             string actual;
             //act
             testArrayOne.Add(1);
@@ -69,13 +69,13 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void MinusOverload_SubtractTwoIndexesCheckCount_NewListCountGoesDown()
+        public void MinusOverload_SubtractTwoIndexesCheckCount_CountGoesDown()
         {
             //assign
             CustomList<int> testArrayOne = new CustomList<int>();
             CustomList<int> testArrayTwo = new CustomList<int>();
             CustomList<int> resultList = new CustomList<int>();
-            int expected = 2;
+            int expected = 1;
             int actual;
             //act
             testArrayOne.Add(1);
@@ -90,13 +90,13 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void MinusOverload_NoMatchingValuesInArray_NewArrayHoldsAllValues()
+        public void MinusOverload_NoMatchingValuesInArray_ResultHasAllValues()
         {
             //assign
             CustomList<int> testArrayOne = new CustomList<int>();
             CustomList<int> testArrayTwo = new CustomList<int>();
             CustomList<int> resultList = new CustomList<int>();
-            string expected = "237651";
+            string expected = "237";
             string actual;
             //act
             testArrayOne.Add(2);

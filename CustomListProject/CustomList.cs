@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CustomListProject
 {
-    public class CustomList<T> : Object
+    public class CustomList<T> : Object 
     {
         //member variables
         private T[] myCustomArray;
@@ -129,17 +129,19 @@ namespace CustomListProject
         }
         public static CustomList<T> operator- (CustomList<T> firstArray, CustomList<T> secondArray)
         {
-            CustomList<T> temporaryArray = new CustomList<T>();
+            //CustomList<T> temporaryArray = new CustomList<T>();
             for (int i = 0; i < firstArray.count; i++)
             {
-                if (firstArray[i].Equals(secondArray[i]))
+                for (int j =0; j<secondArray.count; j++)
                 {
-                    firstArray.Remove[i];
-                    secondArray.Remove[i];
+                    if(firstArray[i].Equals(secondArray[j]))
+                    {
+                        firstArray.Remove(firstArray[i]);
+
+                    }
                 }
-                temporaryArray = firstArray + secondArray;        
             }
-            return temporaryArray;
+            return firstArray;
         }
     }
 }
