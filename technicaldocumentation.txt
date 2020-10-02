@@ -1,0 +1,46 @@
+CustomList<T> Operator - Overload Method:
+
+Removes values from the first array that match those in the second Array.
+
+C#:
+public static CustomList<T> operator - (CustomList<T> firstArray, CustomList<T> secondArray)
+
+Syntax for calling method:
+resultList = firstArray - secondArray
+
+Parameters:
+CustomList<T> firstArray: The List that will have the items removed from it
+CustomList<T> secondArray: The List that will be used to compare values to remove from the first array.
+
+Return Type:
+CustomList<T>
+
+Returns:
+Will return the firstArray with the items found in secondArray removed.
+
+Implements:
+Remove(T)
+
+Examples:
+
+The following example illustrates how the - operator works when called.
+
+CustomList<int> firstArray = new CustomList<int>(){1,3,5}
+CustomList<int> secondArray = new CustomList<int>(){1,2,4,5}
+CustomList<int> resultList = new CustomList<int>();
+
+resultList = firstArray - secondArray;
+//output 3
+
+The following example illustrates what the - overload does:
+ public static CustomList<T> operator -(CustomList<T> firstArray, CustomList<T> secondArray)
+        {
+            for (int i = 0; i < secondArray.count; i++)
+            {
+                firstArray.Remove(secondArray[i]);
+            }
+            return firstArray;
+	}
+
+
+
