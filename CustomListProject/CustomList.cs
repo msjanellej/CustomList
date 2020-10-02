@@ -173,5 +173,12 @@ namespace CustomListProject
             }
             return resultArray;
         }
+        public void Sort(CustomList<T> array)
+        {
+            
+
+        }
+
+       
     }
 }
