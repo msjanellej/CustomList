@@ -117,17 +117,28 @@ namespace CustomListProject
         public static CustomList<T> operator+ (CustomList<T> firstArray, CustomList<T>  secondArray)
         {
             CustomList<T> temporaryArray = new CustomList<T>();
-
-            //temporaryArray.Add(0);
             for (int i = 0; i < firstArray.count; i++)
             {
                 temporaryArray.Add(firstArray[i]);
-
             }
             for (int i = 0; i < secondArray.count; i++)
             {
                 temporaryArray.Add(secondArray[i]);
             }  
+            return temporaryArray;
+        }
+        public static CustomList<T> operator- (CustomList<T> firstArray, CustomList<T> secondArray)
+        {
+            CustomList<T> temporaryArray = new CustomList<T>();
+            for (int i = 0; i < firstArray.count; i++)
+            {
+                if (firstArray[i].Equals(secondArray[i]))
+                {
+                    firstArray.Remove[i];
+                    secondArray.Remove[i];
+                }
+                temporaryArray = firstArray + secondArray;        
+            }
             return temporaryArray;
         }
     }
