@@ -55,6 +55,7 @@
     <Compile Include="String.cs" />
     <Compile Include="PlusOverload.cs" />
     <Compile Include="MinusOverload.cs" />
+    <Compile Include="Zipper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

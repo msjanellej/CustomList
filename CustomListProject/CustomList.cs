@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CustomListProject
 {
-    public class CustomList<T> : Object 
+    public class CustomList<T> : IEnumerable
     {
         //member variables
         private T[] myCustomArray;
@@ -114,6 +115,15 @@ namespace CustomListProject
             }
             return outputString;
         }
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return myCustomArray[i];
+            }
+        }
+
         public static CustomList<T> operator+ (CustomList<T> firstArray, CustomList<T>  secondArray)
         {
             CustomList<T> temporaryArray = new CustomList<T>();
@@ -129,19 +139,20 @@ namespace CustomListProject
         }
         public static CustomList<T> operator- (CustomList<T> firstArray, CustomList<T> secondArray)
         {
-            //CustomList<T> temporaryArray = new CustomList<T>();
-            for (int i = 0; i < firstArray.count; i++)
+            for (int i = 0; i < secondArray.count; i++)
             {
-                for (int j =0; j<secondArray.count; j++)
-                {
-                    if(firstArray[i].Equals(secondArray[j]))
-                    {
-                        firstArray.Remove(firstArray[i]);
-
-                    }
-                }
+                firstArray.Remove(secondArray[i]);    
             }
             return firstArray;
+        }
+        public CustomList<T> Zip(CustomList<T> firstArray, CustomList<T> secondArray)
+        {
+            CustomList<T> resultArray = new CustomList<T>();
+            for (int i = 0; i < length; i++)
+            {
+
+            }
+            return resultArray;
         }
     }
 }
