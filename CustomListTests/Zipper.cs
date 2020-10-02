@@ -17,7 +17,7 @@ namespace CustomListTests
             string expected = "123456";
             string actual;
             //act
-            resultArray = Zip(testArrayOne, testArrayTwo);
+            resultArray = testArrayOne.Zip(testArrayTwo);
             actual = resultArray.ToString();
             //assert
             Assert.AreEqual(expected, actual);
@@ -27,12 +27,12 @@ namespace CustomListTests
         {
             //arrange
             CustomList<int> testArrayOne = new CustomList<int>() { 1, 3, 5 };
-            CustomList<int> testArrayTwo = new CustomList<int>() {2,4,6,8,10};
+            CustomList<int> testArrayTwo = new CustomList<int>() {2,4,6,8};
             CustomList<int> resultArray = new CustomList<int>();
-            string expected = "123456810";
+            string expected = "1234568";
             string actual;
             //act
-            resultArray = Zip(testArrayOne, testArrayTwo);
+            resultArray = testArrayOne.Zip(testArrayTwo);
             actual = resultArray.ToString();
             //assert
             Assert.AreEqual(expected, actual);
@@ -47,7 +47,7 @@ namespace CustomListTests
             string expected = "135";
             string actual;
             //act
-            resultArray = Zip(testArrayOne, testArrayTwo);
+            resultArray = testArrayOne.Zip(testArrayTwo);
             actual = resultArray.ToString();
             //assert
             Assert.AreEqual(expected, actual);
@@ -62,7 +62,7 @@ namespace CustomListTests
             int expected = 6;
             int actual;
             //act
-            resultArray = Zip(testArrayOne, testArrayTwo);
+            resultArray = testArrayOne.Zip(testArrayTwo);
             actual = resultArray.Count;
             //assert
             Assert.AreEqual(expected, actual);
@@ -77,7 +77,7 @@ namespace CustomListTests
             string expected = null;
             string actual;
             //act
-            resultArray = Zip(testArrayOne, testArrayTwo);
+            resultArray = testArrayOne.Zip(testArrayTwo);
             actual = resultArray.ToString();
             //assert
             Assert.AreEqual(expected, actual);

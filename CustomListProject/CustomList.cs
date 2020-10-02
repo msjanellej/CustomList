@@ -87,11 +87,11 @@ namespace CustomListProject
                         temporaryArray[i] = myCustomArray[i];
 
                     }
-                } 
+                }
                 else if (myCustomArray[i].Equals(itemToRemove) && itemFound == false)
                 {
                     itemFound = true;
-                    //temporaryArray[i] = myCustomArray[i + 1];
+
                     continue;
                 }
                 else
@@ -109,7 +109,7 @@ namespace CustomListProject
         public override string ToString()
         {
             string outputString = null;
-            for (int i =0; i<count; i++)
+            for (int i = 0; i < count; i++)
             {
                 outputString = outputString + myCustomArray[i];
             }
@@ -124,7 +124,7 @@ namespace CustomListProject
             }
         }
 
-        public static CustomList<T> operator+ (CustomList<T> firstArray, CustomList<T>  secondArray)
+        public static CustomList<T> operator +(CustomList<T> firstArray, CustomList<T> secondArray)
         {
             CustomList<T> temporaryArray = new CustomList<T>();
             for (int i = 0; i < firstArray.count; i++)
@@ -134,23 +134,42 @@ namespace CustomListProject
             for (int i = 0; i < secondArray.count; i++)
             {
                 temporaryArray.Add(secondArray[i]);
-            }  
+            }
             return temporaryArray;
         }
-        public static CustomList<T> operator- (CustomList<T> firstArray, CustomList<T> secondArray)
+        public static CustomList<T> operator -(CustomList<T> firstArray, CustomList<T> secondArray)
         {
             for (int i = 0; i < secondArray.count; i++)
             {
-                firstArray.Remove(secondArray[i]);    
+                firstArray.Remove(secondArray[i]);
             }
             return firstArray;
         }
-        public CustomList<T> Zip(CustomList<T> firstArray, CustomList<T> secondArray)
+        public CustomList<T> Zip(CustomList<T> secondArray)
         {
             CustomList<T> resultArray = new CustomList<T>();
-            for (int i = 0; i < length; i++)
-            {
 
+            if (count >= secondArray.count)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    resultArray.Add(myCustomArray[i]);
+                    if (i<secondArray.count)
+                    {
+                        resultArray.Add(secondArray[i]);
+                    }                           
+                }
+            }
+            else
+            {
+                for (int i = 0; i < secondArray.count; i++)
+                {
+                    if (i< count)
+                    {
+                        resultArray.Add(myCustomArray[i]);  
+                    }
+                    resultArray.Add(secondArray[i]);
+                }
             }
             return resultArray;
         }
