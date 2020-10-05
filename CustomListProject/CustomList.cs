@@ -115,7 +115,6 @@ namespace CustomListProject
             }
             return outputString;
         }
-
         public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < count; i++)
@@ -123,7 +122,6 @@ namespace CustomListProject
                 yield return myCustomArray[i];
             }
         }
-
         public static CustomList<T> operator +(CustomList<T> firstArray, CustomList<T> secondArray)
         {
             CustomList<T> temporaryArray = new CustomList<T>();
@@ -176,9 +174,6 @@ namespace CustomListProject
         public void Sort(CustomList<T> array)
         {
             
-
         }
-
-       
     }
 }
